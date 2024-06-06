@@ -29,13 +29,6 @@ Here's a simplified textual representation of the flow for the data model diagra
 [User] <-- [Has] <-- [Session ID]
 [Business Idea] <-- [Processed By] <-- [AI Algorithms]
 
-## User Stories
-
-1. As a small business owner, I want to be able to create an account on the Idea-2-Venture platform easily without providing extensive personal details, so I can access the features and benefits of the platform quickly.
-2. As a venture capitalist, I want to browse through a curated list of business ideas on the Idea-2-Venture platform, filtered by industry and potential investment opportunities, so I can identify promising ventures to consider for investment.
-3. As a frontend developer, I want to be able to collaborate with other team members on developing the user interface of the Idea-2-Venture platform, using version control and continuous integration tools, to ensure seamless integration of design changes and updates.
-4. As a backend developer, I want to implement secure API routes for communication between the web client and server, utilizing authentication and encryption protocols, to protect user data and ensure the integrity of the platform's functionality.
-5. As an AI specialist, I want to optimize the AI algorithms integrated into the Idea-2-Venture platform, leveraging machine learning techniques and data analysis to provide personalized recommendations and insights to users, enhancing the platform's value proposition.
 
 ## Technologies
 
