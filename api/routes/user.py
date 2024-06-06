@@ -1,17 +1,9 @@
-import os
-import json
 from flask import Flask, request, jsonify
-from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-app.config["SESSION_FILE_DIR"] = os.path.join(app.root_path, "sessions")
-Session(app)
-
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///user.db"
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
@@ -33,23 +25,24 @@ class UserSchema(ma.Schema):
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
 
-@app.route("/user", methods=["GET"])
+# API Routes
+@app.route("/api/user", methods=["GET"])
 def get_user():
     user = User.query.get(request.args.get("id"))
     if user is None:
         return jsonify({"error": "User not found"}), 404
     return jsonify(user_schema.dump(user))
 
-@app.route("/user", methods=["POST"])
+@app.route("/api/user", methods=["POST"])
 def create_user():
     username = request.json["username"]
     password = request.json["password"]
-    user = User(username, password)
-    db.session.add(user)
+    new_user = User(username, password)
+    db.session.add(new_user)
     db.session.commit()
-    return jsonify(user_schema.dump(user)), 201
+    return jsonify(user_schema.dump(new_user)), 201
 
-@app.route("/user", methods=["PUT"])
+@app.route("/api/user", methods=["PUT"])
 def update_user():
     user = User.query.get(request.args.get("id"))
     if user is None:
@@ -59,7 +52,7 @@ def update_user():
     db.session.commit()
     return jsonify(user_schema.dump(user))
 
-@app.route("/user", methods=["DELETE"])
+@app.route("/api/user", methods=["DELETE"])
 def delete_user():
     user = User.query.get(request.args.get("id"))
     if user is None:
