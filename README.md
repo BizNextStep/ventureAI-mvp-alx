@@ -92,16 +92,9 @@ Non-Technical Risks:
 
 We will use automated testing tools, such as Jest, to test the platform's functionality and ensure it meets our quality standards.
 
-## Existing Solutions
+## Links
 
-Similar Products:
-- IdeaDog: A social media platform for sharing ideas.
-- Slack: A collaboration platform for teams.
-
-Differences:
-Our platform focuses on business ideas and integrates AI-powered tools to help businesses prepare for venture capital investment.
-
-## Decision
-
-We chose to develop our own platform based on the specific requirements of our project and the need for AI integration.
+Deployed Site: https://biznextstep.github.io/ventureAI-mvp-alx/
+Final Blog https://medium.com/@charmainenmbatha/empowering-startups-with-ai-integrated-idea-development-my-journey-with-venture-ai-dd77cbd1d3b3
+Author LinkedIn: https://www.linkedin.com/in/charmaine-ntokozo-mbatha-9b865428/ 
 
